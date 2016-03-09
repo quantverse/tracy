@@ -264,7 +264,8 @@ class Debugger
 			}
 
 		} else {
-			self::fireLog($exception);
+			//self::fireLog($exception);
+			error_log($exception, E_USER_WARNING);
 			$s = get_class($exception) . ($exception->getMessage() === '' ? '' : ': ' . $exception->getMessage())
 				. ' in ' . $exception->getFile() . ':' . $exception->getLine()
 				. "\nStack trace:\n" . $exception->getTraceAsString();
@@ -367,7 +368,8 @@ class Debugger
 			return NULL;
 
 		} else {
-			self::fireLog(new ErrorException($message, 0, $severity, $file, $line));
+			//self::fireLog(new ErrorException($message, 0, $severity, $file, $line));
+			error_log(new ErrorException($message, 0, $severity, $file, $line), E_USER_WARNING);
 			return self::isHtmlMode() ? NULL : FALSE; // FALSE calls normal error handler
 		}
 	}
