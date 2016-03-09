@@ -1,6 +1,8 @@
 [Tracy](https://tracy.nette.org) - PHP debugger
 ==============================================
 
+This forked version just disables firedebug of PHP errors and uses error_log() instead.
+
 [![Downloads this Month](https://img.shields.io/packagist/dm/tracy/tracy.svg)](https://packagist.org/packages/tracy/tracy)
 [![Build Status](https://travis-ci.org/nette/tracy.svg?branch=master)](https://travis-ci.org/nette/tracy)
 [![Build Status Windows](https://ci.appveyor.com/api/projects/status/github/nette/tracy?branch=master&svg=true)](https://ci.appveyor.com/project/dg/tracy/branch/master)
